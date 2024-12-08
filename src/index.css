@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Smooth Scroll and Transitions */
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(128,128,128,0.3) transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(128,128,128,0.3);
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(128,128,128,0.5);
+}
+
+@layer base {
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply 
+      bg-gray-100 
+      dark:bg-gray-900 
+      text-gray-800 
+      dark:text-gray-200
+      transition-colors 
+      duration-500 
+      ease-in-out;
+  }
+
+  /* Subtle Reveal Animations */
+  @keyframes revealUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Advanced Hover Effects */
+  .hover-lift {
+    transition: 
+      transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  }
+}
+
+@layer components {
+  /* Enhanced Component Styles */
+  .nav-link {
+    @apply 
+      cursor-pointer 
+      text-gray-600 
+      dark:text-gray-300 
+      hover:text-gray-800 
+      dark:hover:text-gray-100
+      transition-colors 
+      duration-300 
+      ease-in-out
+      relative 
+      after:absolute 
+      after:bottom-[-2px] 
+      after:left-0 
+      after:w-0 
+      after:h-[2px] 
+      after:bg-gray-800 
+      dark:after:bg-gray-200 
+      after:transition-all 
+      after:duration-300 
+      hover:after:w-full;
+  }
+
+  .section-title {
+    @apply 
+      text-4xl 
+      font-bold 
+      mb-8 
+      text-gray-800 
+      dark:text-gray-200
+      animate-slide-up 
+      opacity-0 
+      animate-fill-forwards;
+  }
+
+  .btn {
+    @apply 
+      px-6 
+      py-3 
+      rounded-lg 
+      font-medium 
+      transition-all 
+      duration-300 
+      ease-in-out 
+      hover:scale-105 
+      focus:outline-none 
+      focus:ring-2 
+      focus:ring-gray-400 
+      dark:focus:ring-gray-600;
+  }
+
+  .btn-primary {
+    @apply 
+      border-2 
+      border-gray-500/50 
+      dark:border-gray-500 
+      text-gray-700 
+      dark:text-gray-300 
+      hover:bg-gray-200/20 
+      dark:hover:bg-gray-500/20;
+  }
+
+  .card {
+    @apply 
+      bg-gray-100 
+      dark:bg-gray-900 
+      p-6 
+      rounded-lg 
+      shadow-lg 
+      hover:translate-y-[-5px] 
+      transition-all 
+      duration-300 
+      hover:shadow-xl 
+      hover-lift;
+  }
+}
+
+/* Global Animation Utilities */
+.animate-reveal {
+  animation: revealUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-fill-forwards {
+  animation-fill-mode: forwards;
+}
+
+/* Parallax Background Layers - Removed color-specific gradients */
+.bg-stars {
+  background-image: radial-gradient(
+    ellipse at bottom, 
+    rgba(30, 30, 50, 0.6) 0%, 
+    rgba(20, 20, 40, 0.4) 100%
+  );
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.bg-mountains {
+  background-image: linear-gradient(
+    to bottom, 
+    rgba(40, 40, 60, 0.4) 0%, 
+    rgba(30, 30, 50, 0.2) 100%
+  );
+  background-size: cover;
+  background-position: bottom;
+}
+
+.bg-foreground {
+  background-image: linear-gradient(
+    to bottom, 
+    rgba(50, 50, 70, 0.2) 0%, 
+    rgba(40, 40, 60, 0.1) 100%
+  );
+  background-size: cover;
+  background-position: bottom;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
