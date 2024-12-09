@@ -22,7 +22,9 @@ import {
   SiNextdotjs, 
   SiGraphql, 
   SiPostgresql,
-  SiFirebase  
+  SiFigma,  
+  SiFirebase, 
+  SiPostman  
 } from 'react-icons/si';
 
 // Define an interface for skill icons that includes React component type
@@ -74,8 +76,9 @@ const Skills: React.FC = () => {
     {
       name: "Tools & Others",
       skills: [
-        { name: "Git", Icon: FaGitAlt, color: "#F05032" },
-        { name: "MongoDB", Icon: SiMongodb, color: "#47A248" }
+        { name: "Git", Icon: FaGitAlt, color: "#F1502F" },
+        { name: "Postman", Icon: SiPostman, color: "#FF6C37" },
+        { name: "Figma", Icon: SiFigma, color: "#F24E1E" }
       ]
     }
   ];
