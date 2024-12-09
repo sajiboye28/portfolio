@@ -17,7 +17,7 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({ setCurrentPage }) => {
-  const { darkMode } = useTheme();
+  const { } = useTheme();
   const formRef = useRef<HTMLFormElement>(null);
   const [formState, setFormState] = useState({
     name: '',
@@ -243,8 +243,7 @@ const Contact: React.FC<ContactProps> = ({ setCurrentPage }) => {
               <motion.button
                 type="submit"
                 disabled={status === 'sending'}
-                className={`
-                  w-full py-3 rounded-lg text-white font-semibold transition-all duration-300 flex items-center justify-center
+                className={`w-full py-3 rounded-lg text-white font-semibold transition-all duration-300 flex items-center justify-center
                   ${status === 'sending' 
                     ? 'bg-gray-400 cursor-not-allowed' 
                     : 'bg-secondary hover:bg-secondary-dark'

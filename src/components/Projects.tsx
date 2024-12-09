@@ -32,7 +32,7 @@ interface ProjectProps {
 }
 
 const Projects: React.FC<ProjectProps> = ({ setCurrentPage }) => {
-  const { darkMode } = useTheme();
+  const { } = useTheme();
   const [filter, setFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
@@ -190,8 +190,7 @@ const Projects: React.FC<ProjectProps> = ({ setCurrentPage }) => {
           {filterOptions.map((option) => (
             <motion.button
               key={option.value}
-              className={`
-                px-4 py-2 rounded-full text-sm font-medium transition-all duration-300
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300
                 ${filter === option.value 
                   ? 'bg-secondary text-white' 
                   : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'

@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   FaCode, 
-  FaLaptopCode, 
   FaRocket, 
   FaBrain, 
   FaGraduationCap, 
@@ -22,7 +21,7 @@ interface AboutProps {
 }
 
 const About: React.FC<AboutProps> = ({ setCurrentPage }) => {
-  const { darkMode } = useTheme();
+  const { } = useTheme();
 
   const aboutSkills: AboutSkill[] = [
     {

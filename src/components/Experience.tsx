@@ -23,7 +23,7 @@ interface ExperienceProps {
 }
 
 const Experience: React.FC<ExperienceProps> = ({ setCurrentPage }) => {
-  const { darkMode } = useTheme();
+  const { } = useTheme();
 
   const experiences: Experience[] = [
     {

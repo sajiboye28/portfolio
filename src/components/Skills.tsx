@@ -1,19 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
-
-// Import React Icons
 import { 
   FaReact, 
   FaNodeJs, 
   FaPython, 
   FaDocker, 
-  FaAws, 
   FaHtml5, 
   FaCss3, 
   FaJsSquare, 
   FaGitAlt,
-  FaJava  
+  FaJava,
+  FaAws  
 } from 'react-icons/fa';
 import { 
   SiTypescript, 
@@ -40,7 +38,7 @@ interface SkillCategory {
 }
 
 const Skills: React.FC = () => {
-  const { darkMode } = useTheme();
+  const {  } = useTheme();
 
   const skillCategories: SkillCategory[] = [
     {
